@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\CoursesWeeksController;
+use App\Http\Controllers\WeekToDaysController;
+use App\Http\Controllers\DaysPdfController;
+use App\Http\Controllers\DaysQuizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +22,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::resources([
+    'course' => CoursesController::class,
+    'week' => CoursesWeeksController::class,
+    'day' => WeekToDaysController::class,
+    'pdf' => DaysPdfController::class,
+    'quiz' => DaysQuizController::class,
+]);
+
+Route::get('main', function () {
+    return view('index');
+})->name('main');

@@ -9,10 +9,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class coursesWeeks extends Model
 {
     use HasFactory;
-    protected $guarded= [];
+
+    protected $table = 'courses_weeks';
+
+    protected $fillable = ['NumberOfWeeks', 'coursesId'];
 
     public function coursesWeeksRel(): BelongsTo
     {
-        return $this->belongsTo(courses::class,'coursesId ');
+        return $this->belongsTo(courses::class, 'coursesId');
     }
 }

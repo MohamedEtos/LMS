@@ -9,11 +9,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class WeekToDays extends Model
 {
     use HasFactory;
-    protected $guarded= [];
+    protected $fillable = ['NumberOfDays', 'VideoName', 'VideoUrl', 'weekId'];
 
 
     public function WeekToDaysRel(): BelongsTo
     {
-        return $this->belongsTo(coursesWeeks::class,'weekId');
+        return $this->belongsTo(coursesWeeks::class, 'weekId');
     }
 }

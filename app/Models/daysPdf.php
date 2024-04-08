@@ -14,6 +14,6 @@ class daysPdf extends Model
 
     public function daysPdfRel(): BelongsTo
     {
-        return $this->belongsTo(WeekToDays::class,'dayId ');
+        return $this->belongsTo(WeekToDays::class, 'dayId');
     }
 }

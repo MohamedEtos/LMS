@@ -14,7 +14,7 @@ class daysQuiz extends Model
 
     public function daysQuizRel(): BelongsTo
     {
-        return $this->belongsTo(WeekToDays::class,'dayId ');
+        return $this->belongsTo(WeekToDays::class, 'dayId');
     }
 
 }
